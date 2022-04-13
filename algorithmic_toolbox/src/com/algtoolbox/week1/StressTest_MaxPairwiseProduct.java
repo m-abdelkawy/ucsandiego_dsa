@@ -7,6 +7,11 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 
+/**
+ * stress test matching both naive and fast algorithms
+ * @author Mohammed Abdelkawy
+ * @version 1.0
+ */
 public class StressTest_MaxPairwiseProduct {
     static void stressTest(int sizeRange, int valueRange){
         LocalDateTime startTime = LocalDateTime.now();
@@ -24,6 +29,7 @@ public class StressTest_MaxPairwiseProduct {
                 System.out.println("OK!");
             else{
                 System.out.println("Wrong Answer: " + resNaive + ", " + resFast);
+                break;
             }
 
             if(ChronoUnit.SECONDS.between(startTime, LocalDateTime.now()) ==10){

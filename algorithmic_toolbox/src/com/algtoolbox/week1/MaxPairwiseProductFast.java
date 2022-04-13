@@ -6,10 +6,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/**
+ * calculates the max pairwise product in O(n) time
+ * @author Mohammed Abdelkawy
+ * @version 1.0
+ */
 public class MaxPairwiseProductFast {
     static long getMaxPairwiseProduct(long[] numbers) {
         int n = numbers.length;
-        int index1 = 0, index2= 0;
+        int index1=0, index2=0;
 
         for (int i = 0; i < n; i++) {
             if(numbers[i] > numbers[index1])

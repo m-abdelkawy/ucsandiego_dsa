@@ -6,18 +6,21 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/**
+ * Calculates the maximum pairwise product in O(n2) time
+ * @author Mohammed Abdelkawy
+ * @version 1.0
+ */
 public class MaxPairwiseProductNaive {
-
-    static long getMaxPairwiseProduct(long[] numbers) {
+    static long getMaxPairwiseProduct(long[] numbers){
         long max_product = 0;
         int n = numbers.length;
 
         for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
+            for (int j = i+1; j < n; j++) {
                 max_product = Math.max(max_product, numbers[i] * numbers[j]);
             }
         }
-
         return max_product;
     }
 
@@ -32,30 +35,30 @@ public class MaxPairwiseProductNaive {
     }
 
     //scanner
-    static class FastScanner {
+    static class FastScanner{
         BufferedReader br;
         StringTokenizer st;
 
-        FastScanner(InputStream stream) {
+        public FastScanner(InputStream stream) {
             try {
                 br = new BufferedReader(new InputStreamReader(stream));
-            } catch (Exception e) {
+            }catch(Exception e){
                 e.printStackTrace();
             }
         }
 
-        String next() {
-            while (st == null || !st.hasMoreTokens()) {
-                try {
+        String next(){
+            while(st == null || !st.hasMoreTokens()){
+                try{
                     st = new StringTokenizer(br.readLine());
-                } catch (IOException e) {
+                }catch(Exception e){
                     e.printStackTrace();
                 }
             }
             return st.nextToken();
         }
 
-        public int nextInt() {
+        public int nextInt(){
             return Integer.parseInt(next());
         }
     }
