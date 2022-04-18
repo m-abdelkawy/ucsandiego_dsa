@@ -7,4 +7,9 @@ public class RandomNumber {
         Random random = new Random();
         return random.nextInt(hi - lo) + lo;
     }
+
+    public static long generateRandomLongBetween(long lo, long hi) {
+        Random random = new Random();
+        return random.nextLong(hi - lo) + lo;
+    }
 }
